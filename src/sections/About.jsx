@@ -49,7 +49,7 @@ const highlights = [
 
 const About = () => {
   return (
-    <section id="about" className="py-10 relative overflow-hidden">
+    <section id="about" className="py-10   relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* left column */}
@@ -66,7 +66,7 @@ const About = () => {
                 One Component at a Time
               </span>
             </h2>
-            <div className="space-y-4 text-muted-foreground animate-fade-in animate-delay-200">
+            <div className="space-y-4 text-muted-foreground animate-fade-in animate-delay-200 text-justify">
               <p>
                 I am Parmanand Ray, a Full Stack Web Developer passionate about
                 building modern, responsive, and scalable web applications. I
@@ -93,7 +93,7 @@ const About = () => {
               </p>
             </div>
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animate-delay-300">
-              <p className="text-lg font-medium italic text-foreground">
+              <p className="text-lg font-medium italic text-foreground text-justify">
                 "Building innovative and scalable digital solutions through
                 clean code, modern technologies, and problem-solving. Focused on
                 creating web applications that deliver smooth user experiences

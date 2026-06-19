@@ -136,8 +136,11 @@ const Testimonials = () => {
                 ))}
               </div>
 
-              <button className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all">
-                <ChevronRight onClick={next} />
+              <button
+                onClick={next}
+                className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
+              >
+                <ChevronRight />
               </button>
             </div>
           </div>
