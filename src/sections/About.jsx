@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Code2,
   Database,
@@ -105,8 +104,8 @@ const About = () => {
           <div className="grid sm:grid-cols-2 gap-6 ">
             {highlights.map((item, index) => (
               <div
-                kay={index}
-                className="glass p-6 rounded-2xl animate-fade-in "
+                key={index}
+                className="glass p-6 rounded-2xl animate-fade-in"
                 style={{ animationDelay: `${(index + 1) * 100}ms` }}
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">

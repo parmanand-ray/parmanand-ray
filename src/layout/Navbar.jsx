@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "@/components/Button";
 import { Menu, X } from "lucide-react";
 
@@ -12,10 +12,14 @@ const navLinks = [
     label: "Projects",
   },
   {
+    href: "#professional-projects",
+    label: "Professional Work",
+  },
+  {
     href: "#experience",
     label: "Experience",
   },
-   {
+  {
     href: "#educations",
     label: "Education",
   },
@@ -84,7 +88,7 @@ const Navbar = () => {
         {/* mobile nav btn */}
         <button
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground corsor-pointer "
+          className="md:hidden p-2 text-foreground cursor-pointer"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

@@ -1,10 +1,9 @@
-import React from "react";
 import Button from "@/components/Button";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const skills = [
   "JavaScript",
@@ -38,9 +37,7 @@ const skills = [
   "DSA",
 ];
 const Hero = () => {
-  const [experience, setExperience] = useState(1);
-
-  useEffect(() => {
+  const experience = useMemo(() => {
     const joiningDate = new Date("July 1, 2025");
     const today = new Date();
 
@@ -54,8 +51,18 @@ const Hero = () => {
       years--;
     }
 
-    setExperience(years);
+    return years;
   }, []);
+
+  const [dots] = useState(() =>
+    Array.from({ length: 50 }).map(() => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
+      animationDelay: `${Math.random() * 5}s`,
+    })),
+  );
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
@@ -67,18 +74,18 @@ const Hero = () => {
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
       {/* Green dots */}
-      <div className="absolute inset-0 ovetflow-hidden pointer-events-none">
-        {[...Array(50)].map((_, index) => (
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {dots.map((dot, index) => (
           <div
+            key={index}
             style={{
               backgroundColor: "#20B2A6",
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
-              amimationDelay: `${Math.random() * 5}s`,
+              top: dot.top,
+              left: dot.left,
+              animation: dot.animation,
+              animationDelay: dot.animationDelay,
             }}
-            key={index}
-            className=" absolute h-1.5 w-1.5 rounded-full opacity-60"
+            className="absolute h-1.5 w-1.5 rounded-full opacity-60"
           />
         ))}
       </div>
@@ -97,7 +104,7 @@ const Hero = () => {
             <div className="space-y-4 ">
               <h1 className="text-4xl  md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animate-delay-100">
                 Building
-                <span className="text-primary glow-text"> full-stack</span>
+                <span className="text-primary glow-text"> Full-stack</span>
                 <br />
                 web applications with
                 <br />
@@ -213,7 +220,7 @@ const Hero = () => {
           <div className="relative overflow-hidden">
             <div className="flex animate-marquee">
               {[...skills, ...skills].map((skill, index) => (
-                <div kay={index} className="flex-shrink-0 px-8 py-4 ">
+                <div key={index} className="flex-shrink-0 px-8 py-4">
                   <span className="text-xl font-semibold text-muted-foreground">
                     {skill}
                   </span>
@@ -229,7 +236,7 @@ const Hero = () => {
       >
         <a
           href="#about"
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group  corsor-pointer"
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group cursor-pointer"
         >
           <span className="text-xs uppercase tracking-wider">Scroll</span>
           <ChevronDown className="w-6 h-6 animate-bounce" />

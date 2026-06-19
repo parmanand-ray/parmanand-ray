@@ -1,5 +1,3 @@
-import React from "react";
-
 const skills = [
   "JavaScript",
   "MongoDB",
@@ -43,7 +41,7 @@ const Certifications = () => {
             learning, technical growth, and staying updated with modern industry
             standards.
           </p>
-        </div>  
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-6">
@@ -51,7 +49,7 @@ const Certifications = () => {
               <h3 className="text-xl font-semibold mb-3">Education</h3>
               <div className="text-sm text-muted-foreground space-y-4">
                 <div>
-                  <div className="font-medium">B.Tech in CSE</div>
+                  <div className="font-medium">B.Tech in Computer Science</div>
                   <div>Sandip University, Sijaul, Madhubani — 2021 – 2025</div>
                   <div>CGPA: 8.4</div>
                 </div>
@@ -93,6 +91,12 @@ const Certifications = () => {
                 </li>
                 <li>
                   <strong>Alpha (DSA with Java)</strong> — Apna College (2023)
+                </li>
+                <li>
+                  <strong>Mern Stack </strong> — Apna College (2024)
+                </li>
+                <li>
+                  <strong>ADCA (Advanced Diploma in Computer Applications)</strong> — Fastech Computer Academy (2020)
                 </li>
               </ul>
             </div>

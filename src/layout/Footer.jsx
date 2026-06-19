@@ -1,4 +1,3 @@
-import { Heart } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 const socialLinks = [
@@ -27,6 +26,10 @@ const socialLinks = [
 const footerLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
+  {
+    href: "#professional-projects",
+    label: "Professional Work",
+  },
   { href: "#experience", label: "Experience" },
   { href: "#educations", label: "Education" },
 

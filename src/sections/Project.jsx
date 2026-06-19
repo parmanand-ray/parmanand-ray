@@ -1,7 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-
-import React from "react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
   {
@@ -64,7 +62,7 @@ const Project = () => {
           </p>
         </div>
         {/* projects grid */}
-        <div className="grid md:grid-cols-2 gap-2">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -119,12 +117,35 @@ const Project = () => {
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIdx) => (
                     <span
+                      key={tagIdx}
                       className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
-                      kay={tagIdx}
                     >
                       {tag}
                     </span>
                   ))}
+                </div>
+
+                {/* Mobile Buttons */}
+                <div className="grid grid-cols-2 gap-3 sm:hidden pt-2">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90"
+                  >
+                    Live Link
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/50 bg-surface px-4 py-2.5 text-sm font-medium text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
+                  >
+                    <FaGithub className="w-4 h-4" />
+                    GitHub
+                  </a>
                 </div>
               </div>
             </div>

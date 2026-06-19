@@ -2,6 +2,7 @@ import Navbar from "@/layout/Navbar";
 import Hero from "@/sections/Hero";
 import About from "@/sections/About";
 import Project from "@/sections/Project";
+import ProfessionalProjects from "@/sections/ProfessionalProjects";
 import Experience from "@/sections/Experience";
 import Certifications from "@/sections/Certifications";
 import Contact from "@/sections/Contact";
@@ -16,6 +17,7 @@ function App() {
         <Hero />
         <About />
         <Project />
+        <ProfessionalProjects />
         <Experience />
         <Certifications />
         <Testimonials />
